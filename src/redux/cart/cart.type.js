@@ -1,0 +1,8 @@
+const CartTypeAction = {
+  TOGGEL_CART_DROPDOWN: "TOGGEL_CART_DROPDOWN",
+  ADD_CART: "ADD_CART",
+  REMOVE_CART: "REMOVE_CART",
+  CLEAR_ITEM_FROM_CART: "CLEAR_ITEM_FROM_CART",
+};
+
+export default CartTypeAction;
