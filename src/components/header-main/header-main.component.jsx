@@ -6,10 +6,11 @@ import MenuItem from "../menu/menu.component";
 
 import LogoBar from "../logo-bar/logo-bar.component";
 
-const HeaderMain = () => {
+const HeaderMain = ({ currentUser }) => {
+  console.log("HeaderMain", currentUser);
   return (
     <HeaderBackground>
-      <LogoBar />
+      <LogoBar currentUser={currentUser} />
       <MenuItem />
     </HeaderBackground>
   );

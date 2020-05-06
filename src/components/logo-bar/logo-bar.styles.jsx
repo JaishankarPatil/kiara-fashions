@@ -18,3 +18,16 @@ export const BrandName = styled.div`
   letter-spacing: 1px;
   line-height: 80px;
 `;
+
+export const SignInButton = styled.button`
+  height: 35px;
+  width: 70px;
+  border-radius: 2em;
+  background-color: #212121;
+  border: 2px solid #fff;
+  margin-top: 28px;
+  position: absolute;
+  right: 8em;
+  color: #fff;
+  cursor: pointer;
+`;
