@@ -2,6 +2,11 @@ import { createSelector } from "reselect";
 
 const selectShop = (state) => state.shop;
 
+export const selectShopStoreIsLoding = createSelector(
+  [selectShop],
+  (shop) => shop.isLoading
+);
+
 export const selectShopStoreItems = createSelector(
   [selectShop],
   (shop) => shop.StoreItems

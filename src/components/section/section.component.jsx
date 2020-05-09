@@ -5,48 +5,46 @@ import {
   selectShopStoreItems,
   selectShopStoreItem,
   selectStoreItemsPreview,
+  selectShopStoreIsLoding,
 } from "../../redux/shop/shop.selectors";
 
-import {
-  firestore,
-  convertStoreItemsSnapshotToMap,
-} from "../../firebase/firebase.utils";
+import Spinner from "../with-spinner/with-spinner.component";
 
-import { setShopData } from "../../redux/shop/shop.action";
+import { fetchShopItemsStartAsync } from "../../redux/shop/shop.action";
 
 import SectionItem from "../section-item/section-item.component";
-import ttt from "./section.styles";
+import { render } from "@testing-library/react";
+//import { addCollectionAndDocument } from "../../firebase/firebase.utils";
 
-import { addCollectionAndDocument } from "../../firebase/firebase.utils";
+class SectionPage extends React.Component {
+  componentDidMount() {
+    const { fetchShopItemsStartAsync } = this.props;
+    fetchShopItemsStartAsync();
+  }
 
-const SectionPage = ({ match, setStoreData, storePreview, shopData }) => {
-  useEffect(() => {
-    const collectionRef = firestore.collection("ShopItems");
-
-    collectionRef.onSnapshot((snapshot) => {
-      const convartedStoreMap = convertStoreItemsSnapshotToMap(snapshot);
-      console.log("convartedStoreMap", convartedStoreMap);
-      setStoreData(convartedStoreMap);
-    });
-  }, []);
-
-  return (
-    <div>
-      {shopData.map((section) => (
-        <SectionItem key={section.id} section={section} />
-      ))}
-    </div>
-  );
-};
+  render() {
+    const { shopData, isLoading } = this.props;
+    return isLoading ? (
+      <Spinner />
+    ) : (
+      <div>
+        {shopData.map((section) => (
+          <SectionItem key={section.id} section={section} />
+        ))}
+      </div>
+    );
+  }
+}
 
 const mapDispatchToProps = (dispatch) => ({
-  setStoreData: (StoreItems) => dispatch(setShopData(StoreItems)),
+  fetchShopItemsStartAsync: () => dispatch(fetchShopItemsStartAsync()),
 });
 
 const mapStateToProps = (state, { match }) => ({
   //shopData: selectShopStoreItems(state),
   shopData: selectShopStoreItem(match.params.sectionId)(state),
   storePreview: selectStoreItemsPreview(state),
+  isLoading: selectShopStoreIsLoding(state),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SectionPage);

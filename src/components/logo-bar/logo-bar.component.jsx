@@ -5,7 +5,9 @@ import CartIcon from "../cart-icon/carticon.component";
 import Logo from "../logo/logo.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 import { auth } from "../../firebase/firebase.utils";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import { createStructuredSelector } from "reselect";
+import { selectHidden } from "../../redux/cart/cart.selectors";
 
 import { LogoContainer, BrandName, SignInButton } from "./logo-bar.styles";
 
@@ -30,8 +32,8 @@ const LogoBar = ({ hidden, history, currentUser }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  hidden: state.cart.hidden,
+const mapStateToProps = createStructuredSelector({
+  hidden: selectHidden,
 });
 
 export default compose(withRouter, connect(mapStateToProps))(LogoBar);
