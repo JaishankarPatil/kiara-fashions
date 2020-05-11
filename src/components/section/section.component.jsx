@@ -10,7 +10,7 @@ import {
 
 import Spinner from "../with-spinner/with-spinner.component";
 
-import { fetchShopItemsStartAsync } from "../../redux/shop/shop.action";
+import { fetchShopItemsStart } from "../../redux/shop/shop.action";
 
 import SectionItem from "../section-item/section-item.component";
 import { render } from "@testing-library/react";
@@ -18,8 +18,8 @@ import { render } from "@testing-library/react";
 
 class SectionPage extends React.Component {
   componentDidMount() {
-    const { fetchShopItemsStartAsync } = this.props;
-    fetchShopItemsStartAsync();
+    const { fetchShopItemsStart } = this.props;
+    fetchShopItemsStart();
   }
 
   render() {
@@ -37,7 +37,7 @@ class SectionPage extends React.Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchShopItemsStartAsync: () => dispatch(fetchShopItemsStartAsync()),
+  fetchShopItemsStart: () => dispatch(fetchShopItemsStart()),
 });
 
 const mapStateToProps = (state, { match }) => ({

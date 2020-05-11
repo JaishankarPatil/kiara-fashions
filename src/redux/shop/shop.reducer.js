@@ -6,7 +6,7 @@ const INITIAL_STATE = {
 };
 
 const shopReducer = (state = INITIAL_STATE, action) => {
-  console.log("action.payload", action.payload);
+  //console.log("action.payload", action.payload);
   switch (action.type) {
     case shopActionType.FETCH_STORE_ITEMS_START:
       return {

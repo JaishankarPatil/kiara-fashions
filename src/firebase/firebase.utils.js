@@ -44,7 +44,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: "select_account" });
-export const signInWithPopup = () => auth.signInWithPopup(googleProvider);
+//export const signInWithPopup = () => auth.signInWithPopup(googleProvider);
 
 export const addCollectionAndDocument = async (collectionKey, objectsToAdd) => {
   const collectionRef = firestore.collection(collectionKey);
@@ -74,6 +74,15 @@ export const convertStoreItemsSnapshotToMap = (storeItemsSnapshot) => {
     accumulator[storeItem.title.toLowerCase()] = storeItem;
     return accumulator;
   }, {});
+};
+
+export const getCurrentUser = () => {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+      unsubscribe();
+      resolve(userAuth);
+    }, reject);
+  });
 };
 
 export const firestore = firebase.firestore();
