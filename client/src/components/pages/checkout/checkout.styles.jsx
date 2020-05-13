@@ -36,11 +36,11 @@ export const TotalAmountContainer = styled.div`
 
 export const TotalAmountSpan = styled.div`
   font-size: 18px;
-  font-family: "Playfair Display", serif;
+
   line-height: 40px;
   text-align: right;
   position: relative;
-  margin-right: 30px;
+  margin-right: 60px;
 `;
 
 export const CheckoutCartHeader = styled.div`
@@ -62,7 +62,7 @@ export const CheckoutHeaderName = styled.div`
 
 export const CheckoutHeaderPrice = styled.div`
   font-size: 15px;
-  font-family: "Playfair Display", serif;
+
   margin-right: 30px;
   line-height: 60px;
 `;
@@ -117,7 +117,7 @@ export const QuantityContainer = styled.div`
 
 export const QuantityUpdate = styled.div`
   position: relative;
-  width: 40%;
+  width: 60%;
   height: 100%;
   text-align: center;
   line-height: 60px;
@@ -177,7 +177,7 @@ export const ToatalAmoutPayment = styled.div`
   height: 50px;
   position: relative;
   font-size: 16px;
-  font-family: "Playfair Display", serif;
+
   line-height: 40px;
   margin-left: 23px;
 `;

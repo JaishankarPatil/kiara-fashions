@@ -23,9 +23,9 @@ const DefaultFooter = () => (
       <WalletImage />
       <CODImage />
     </DefaltFooterPaymentOption>
-    <DefaltFooterBrandName>KIYARA FASHIONS</DefaltFooterBrandName>
+    <DefaltFooterBrandName>KIARA FASHIONS</DefaltFooterBrandName>
     <DefaltFooterCopyright>
-      © 2020 Kiyara Fashions Pvt Ltd.
+      © 2020 Kiara Fashions Pvt Ltd.
     </DefaltFooterCopyright>
   </DefaultFooterContainer>
 );

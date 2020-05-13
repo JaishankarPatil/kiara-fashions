@@ -10,6 +10,8 @@ import {
   addItem,
 } from "../../../redux/cart/cart.action";
 
+import { formatNumber } from "./checkout.utils";
+
 import {
   selectCartItems,
   selectTotalAmount,
@@ -79,21 +81,21 @@ const CheckoutPage = ({
               </QuantityContainer>
             </ItemDescription>
             <CurencySym />
-            <ItemPrice>{catItem.price}</ItemPrice>
+            <ItemPrice>{formatNumber(catItem.price)}</ItemPrice>
           </CheckoutItmContainer>
         ))}
         <TotalAmountContainer>
           <TotalAmountSpan>
             {" "}
             Subtotal ({totalQuantity} item ) : <CurencySymSubTotal />{" "}
-            {totalAmount}{" "}
+            {formatNumber(totalAmount)}{" "}
           </TotalAmountSpan>
         </TotalAmountContainer>
       </CheckoutItmsContainer>
       <ProceedToBuyContainer>
         <ToatalAmoutPayment>
           Subtotal ({totalQuantity} item ) : <CurencySymSubTotal />{" "}
-          {totalAmount}
+          {formatNumber(totalAmount)}
         </ToatalAmoutPayment>
         <StripePayment price={totalAmount} />
       </ProceedToBuyContainer>
