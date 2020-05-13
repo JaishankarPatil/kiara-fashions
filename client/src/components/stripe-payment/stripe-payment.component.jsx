@@ -20,7 +20,7 @@ const StripePayment = ({ price }) => {
       })
       .catch((error) => {
         console.log("Payment Error", JSON.parse(JSON.stringify(error)));
-        alert("There is an issue with Paynt, Kindly check your card details");
+        alert("There is an issue with Payment, Kindly check your card details");
       });
   };
 
@@ -32,9 +32,9 @@ const StripePayment = ({ price }) => {
       shippingAddress
       description="Big Data Stuff" // the pop-in header subtitle
       image="https://stripe.com/img/documentation/checkout/marketplace.png" // the pop-in header image (default none)
-      currency="USD"
+      currency="INR"
       description={`Your total is ${price}`}
-      amount={1}
+      amount={priceForStripe}
       panelLabel="Pay Now"
       token={onToken}
       stripeKey={publishablekey}

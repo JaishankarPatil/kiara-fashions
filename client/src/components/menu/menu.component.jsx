@@ -27,11 +27,7 @@ const MenuItem = () => {
           <span>WDDING COLLECTION</span>
         </a>
       </MenuName>
-      <MenuName>
-        <a href="/shop/jewellery">
-          <span>JEWELLERY</span>
-        </a>
-      </MenuName>
+
       <MenuName>
         <a href="/shop/accessories">
           <span>ACCESSORIES</span>

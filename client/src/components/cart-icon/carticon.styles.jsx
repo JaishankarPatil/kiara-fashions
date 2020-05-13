@@ -18,17 +18,18 @@ export const CartIconSize = styled.div`
 
 export const CartItemsCount = styled.div`
   position: top;
-  background-color: grey;
+  background-color: #b2babb;
   width: 3vmax;
   height: 3vmax;
   border-radius: 50%;
   margin-top: -0.5vmax;
   margin-left: 1.4vmax;
+  display: flex;
+  justify-content: space-around;
+`;
 
-  span {
-    color: #fff;
-    font-size: 1.9vmax;
-    margin-left: 0.2vmax;
-    line-height: 3vmax;
-  }
+export const CartItemCountNum = styled.span`
+  color: #fff;
+  font-size: 1.9vmax;
+  line-height: 3vmax;
 `;

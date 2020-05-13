@@ -7,6 +7,7 @@ import {
   CartIconContainer,
   CartIconSize,
   CartItemsCount,
+  CartItemCountNum,
 } from "./carticon.styles";
 
 import { selectTotalQuantity } from "../../redux/cart/cart.selectors";
@@ -17,7 +18,7 @@ const CartIcon = ({ toggelDropdown, totalQuantity }) => (
       <CartIconImage onClick={toggelDropdown} />
     </CartIconSize>
     <CartItemsCount>
-      <span>{totalQuantity}</span>
+      <CartItemCountNum>{totalQuantity}</CartItemCountNum>
     </CartItemsCount>
   </CartIconContainer>
 );
